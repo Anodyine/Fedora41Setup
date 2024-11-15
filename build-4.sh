@@ -16,6 +16,7 @@ curl -L -o install-tl-unx.tar.gz https://mirror.ctan.org/systems/texlive/tlnet/i
 zcat < install-tl-unx.tar.gz | tar xf - 
 cd install-tl-20241112/
 sudo perl ./install-tl --no-interaction
+sudo grep -qxF 'PATH="/usr/local/texlive/2024/bin/x86_64-linux:$PATH"' .bashrc || echo 'PATH="/usr/local/texlive/2024/bin/x86_64-linux:$PATH"' >> .bashrc
 sudo dnf install perl-File-Copy
 sudo dnf install perl-Time-HiRes
 sudo dnf install perl-Unicode-Normalize
